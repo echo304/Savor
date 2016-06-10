@@ -45,6 +45,10 @@ var upload = multer({storage: storage}).single('file');
 // API endpoints
 var handler = require('./handlers/handlers');
 
+var externalAPIroutes = require(__dirname + '/routes/externalAPI.js'); 
+// my new route
+app.use('/extapi/yelp/', externalAPIroutes); 
+
 // use this route with review submit button
 app.post('/api/restaurants', handler.addRestaurant);
 
