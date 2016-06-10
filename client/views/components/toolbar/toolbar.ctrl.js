@@ -2,6 +2,8 @@ angular
     .module('savor.toolbar', [])
     .controller('toolbarController', ['toolbarFactory', 'ngDialog', '$scope']);
 
+// CHANGED (not really)
+// they forgot to inject rootScope?
 function toolbarController(auth, store, $location, ngDialog, $scope) {
   var vm = this;
   vm.login = login;

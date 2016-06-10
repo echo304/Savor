@@ -34,7 +34,6 @@
               * @return {[Object]}
               */
          $scope.sendPost = function() {
-          // use service to grab and return yelp data, to inject into data to be posted to DB
 
 
              var data = ({
