@@ -14,7 +14,7 @@ var foodApp = angular
     'ngMaterial',
     'material.svgAssetsCache',
     // CHANGED
-    'ngResource' // need to add angular-resource??? looks lke already added... 
+    'ngResource' 
   ])
 
 
