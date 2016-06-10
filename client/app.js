@@ -1,4 +1,5 @@
-angular
+// CHANGED, added var foodApp = 
+var foodApp = angular
   .module('savor', [
     'savor.toolbar',
     'savor.review',
@@ -11,7 +12,9 @@ angular
     'ui.router',
     'ngDialog',
     'ngMaterial',
-    'material.svgAssetsCache'
+    'material.svgAssetsCache',
+    // CHANGED
+    'ngResource' // need to add angular-resource??? looks lke already added... 
   ])
 
 
