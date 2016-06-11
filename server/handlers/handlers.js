@@ -3,8 +3,8 @@ var restaurantController = require('./../db/controllers');
 module.exports = {
 
     //function not being used
-        getRestaurantsByUser: function(req, res) {
-        var id = req.params._id;
+    getRestaurantsByUser: function(req, res) {
+        var id = req.params.id;
         restaurantController.fetchAllById(id, function(restaurant) {
             res.status(200).json(restaurant);
         })
@@ -17,7 +17,7 @@ module.exports = {
     },
     //function not being used
     getOneRestaurant: function(req, res) {
-        var id = req.params._id;
+        var id = req.params.id;
         restaurantController.fetchOne(id, function(restaurant) {
             res.status(200).json(restaurant);
         })
@@ -32,8 +32,7 @@ module.exports = {
     },
     //function not being used
     updateRestaurantInfo: function(req, res) {
-        //_.id
-        var id = req.params._id;
+        var id = req.params.id;
         var newProperties = req.body;
         restaurantController.updateOne(id, newProperties, function(updatedRestaurant) {
             res.status(200).json(updatedRestaurant);
@@ -41,7 +40,7 @@ module.exports = {
     },
     //function not being used
     deleteRestaurant: function(req, res) {
-        var id = req.params._id;
+        var id = req.params.id;
         restaurantController.deleteOne(id, function(deleted) {
             res.status(200).json(deleted);
         })

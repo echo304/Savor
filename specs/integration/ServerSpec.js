@@ -3,7 +3,7 @@ var request = require('request');
 
 var app = require('../../index.js');
 var Restaurant = require('../../server/db/models.js');
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 3000;
 
 describe('/restaurants', function () {
   
