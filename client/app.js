@@ -19,8 +19,8 @@ angular
   .config(function($provide, authProvider, $urlRouterProvider, $stateProvider, $httpProvider, jwtInterceptorProvider, uiGmapGoogleMapApiProvider) {
 
     authProvider.init({
-      domain: 'savor.auth0.com',
-      clientID: 'VJw1CCaxKJ4FdkqPamlBxUUrjuGapt8e'
+      domain: 'savor-it.auth0.com',
+      clientID: '9GEIyOmo6sWg0W912IKhAb3UF2mA37kr'
     });
 
     $urlRouterProvider.otherwise('/user');
