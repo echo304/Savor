@@ -83,7 +83,7 @@ describe('/restaurants', function () {
       if(err) return done(err);
       request(GETall, function (err, res) {
         expect(res.statusCode).to.equal(200);
-        expect(JSON.parse(res.body)).to.have.lengthOf(2);
+        expect(JSON.parse(res.body)).to.have.lengthOf(10);
         done();
       });
     });
