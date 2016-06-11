@@ -28,6 +28,7 @@ module.exports = function(config) {
       'client/bower_components/svg-assets-cache.js/svg-assets-cache.js',
       'client/app.js',
       'client/views/components/home/home.ctrl.js',
+      'client/views/components/review/review.ctrl.js',
       'specs/unit/client/*.*'
     ],
 
