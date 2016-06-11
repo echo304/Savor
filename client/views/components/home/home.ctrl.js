@@ -1,13 +1,6 @@
-//necessary to use underscore
-var underscore = angular.module('underscore', []);
-underscore.factory('_', function() {
-  //Underscore must already be loaded on the page
-  return window._;
-});
-
 angular
-  .module('savor.home',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'underscore', 'uiGmapgoogle-maps'])
-  .controller('homeController', function($scope, $http, _, uiGmapGoogleMapApi) {
+  .module('savor.home',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'uiGmapgoogle-maps'])
+  .controller('homeController', function($scope, $http, uiGmapGoogleMapApi) {
 
     //refresh function that was an attempt to get just added restaurant to render on page without a refresh
     /*window.refresh = function() {
@@ -17,24 +10,24 @@ angular
       })
     };*/
 
-    // mock data of google map
-    $scope.map = {
-      center: {
-        latitude: 45,
-        longitude: -73
-      },
-      zoom: 8
-    };
+    // default data of google map
+    // $scope.map = {
+    //   center: {
+    //     latitude: 45,
+    //     longitude: -73
+    //   },
+    //   zoom: 8
+    // };
 
     $scope.profile = JSON.parse(localStorage.getItem('profile'));
 
-    function getAll() {
+    $scope.getAll = function getAll() {
       $http.get('/api/restaurants').then(function(res) {
         $scope.restaurants = res.data;
       });
     }
     // Make sure to wait till Google Maps SDK is fully ready
     uiGmapGoogleMapApi.then(function(maps) {
-      getAll();
+      $scope.getAll();
     });
   });

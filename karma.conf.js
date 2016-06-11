@@ -15,6 +15,19 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'client/bower_components/angular/angular.js',
+      'client/bower_components/angular-mocks/angular-mocks.js',
+      'client/bower_components/angular-material/angular-material.js',
+      'client/bower_components/angular-messages/angular-messages.js',
+      'client/bower_components/angular-material-icons/angular-material-icons.js',
+      'client/bower_components/angular-animate/angular-animate.js',
+      'client/bower_components/angular-aria/angular-aria.js',
+      'client/bower_components/angular-google-maps/dist/angular-google-maps.js',
+      'client/bower_components/lodash/dist/lodash.js',
+      'client/bower_components/angular-simple-logger/dist/angular-simple-logger.js',
+      'client/bower_components/svg-assets-cache.js/svg-assets-cache.js',
+      'client/app.js',
+      'client/views/components/home/home.ctrl.js',
       'specs/unit/client/*.*'
     ],
 

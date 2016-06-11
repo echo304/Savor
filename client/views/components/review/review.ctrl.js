@@ -54,37 +54,37 @@ var app = angular.module('savor.review',['ngMaterial', 'ngMessages', 'material.s
     });
 
   //'this' is the scope. So setting 'that' equal to 'this' ensures that 'this' stays bound to the scope
-  var that = this;
-  that.upload = function(file){
-    Upload.upload({
-      //webAPI exposed to upload the file
-      url: 'http://52.78.18.121:8080/uploads',
-      //pass file as data, should be user ng-model
-      data:{file:file}
-    //upload function returns a promise
-    }).then(function (resp){
-      if(resp.data.error_code === 0) { //validate success
-        console.log('Success ' + that.up.file.name + 'uploaded. Response: ');
-      } else {
-        console.log('an error occured');
-      }
-    });
-  };
+    var that = this;
+    that.upload = function(file){
+      Upload.upload({
+        //webAPI exposed to upload the file
+        url: 'http://52.78.18.121:8080/uploads',
+        //pass file as data, should be user ng-model
+        data:{file:file}
+      //upload function returns a promise
+      }).then(function (resp){
+        if(resp.data.error_code === 0) { //validate success
+          console.log('Success ' + that.up.file.name + 'uploaded. Response: ');
+        } else {
+          console.log('an error occured');
+        }
+      });
+    };
 
-  that.upload(that.up.file);
-  //closes the dialog box once the 'submit' is clicked
-  ngDialog.close();
-  //removes line that confirms a photo has been added
-  $scope.photoUploaded = false;
-  $state.go($state.current, {}, {reload: true}); 
-  /**
-   * The following is two ideas to get the page to automatically append the just submitted data (so that you don't have to refresh the page to see your new entry)
-   */
-  //using jQuery to append...
-    // $("#start").append('<div id="container"><div id="content"><div class="row"><div class="col-md-4"><img id="restphoto" src="{{'data.image'}}" alt=""></div><div class="col-md-8"><h1>{{'data.restaurantName'}}</h1><div class="restinfo"><p>{{'data.restaurantAddress'}}</p><p>{{'data.restaurantReview'}}</p></div><h3>Ratings</h3><div class ="ratinginfo"><ul><li>Food: {{'data.foodRating'}}</li><li>Service: {{'data.serviceRating'}}</li><li>Ambience: {{'data.ambienceRating'}}</li><li>Price per: {{'$' '+ data.priceRating'}}</li></ul></div></div></div></div></div>')
+    that.upload(that.up.file);
+    //closes the dialog box once the 'submit' is clicked
+    ngDialog.close();
+    //removes line that confirms a photo has been added
+    $scope.photoUploaded = false;
+    $state.go($state.current, {}, {reload: true});
+    /**
+     * The following is two ideas to get the page to automatically append the just submitted data (so that you don't have to refresh the page to see your new entry)
+     */
+    //using jQuery to append...
+      // $("#start").append('<div id="container"><div id="content"><div class="row"><div class="col-md-4"><img id="restphoto" src="{{'data.image'}}" alt=""></div><div class="col-md-8"><h1>{{'data.restaurantName'}}</h1><div class="restinfo"><p>{{'data.restaurantAddress'}}</p><p>{{'data.restaurantReview'}}</p></div><h3>Ratings</h3><div class ="ratinginfo"><ul><li>Food: {{'data.foodRating'}}</li><li>Service: {{'data.serviceRating'}}</li><li>Ambience: {{'data.ambienceRating'}}</li><li>Price per: {{'$' '+ data.priceRating'}}</li></ul></div></div></div></div></div>')
 
-  //using the refresh function found in user.ctrl.js
-    // window.refresh();
+    //using the refresh function found in user.ctrl.js
+      // window.refresh();
   };
 
 });
