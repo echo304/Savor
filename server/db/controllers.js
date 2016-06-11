@@ -11,7 +11,7 @@ module.exports = {
       } else {
         callback(restaurant);
       }
-    })
+    });
   },
   
   fetchAll: function(callback) {
@@ -42,7 +42,7 @@ module.exports = {
       } else {
         callback(newEntry);
       }
-    })
+    });
   },
   //function not being used...
   updateOne: function(id, newProperties, callback) {
