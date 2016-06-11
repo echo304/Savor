@@ -23,7 +23,7 @@ angular
       clientID: '9GEIyOmo6sWg0W912IKhAb3UF2mA37kr'
     });
 
-    $urlRouterProvider.otherwise('/user');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
 
