@@ -13,7 +13,9 @@
     "Brent Colson"
   ],
   "scripts": {
+    "start": "node index.js",
     "test": "./node_modules/.bin/mocha --reporter spec specs/integration/ServerSpec.js;"
+    "postinstall": "bower install"
   },
   "dependencies": {
     "body-parser": "^1.4.3",
