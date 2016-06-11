@@ -5,5 +5,4 @@ foodApp.controller('testController', [$scope,
 
   $scope.testValue = 'OMGOMGSOME TEST VALUE!!!'; 
 
-
 }]);
