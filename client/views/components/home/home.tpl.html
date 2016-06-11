@@ -37,7 +37,7 @@
                     <li>Service: {{restaurant.serviceRating}}</li>
                     <li>Ambience: {{restaurant.ambienceRating}}</li>
                     <li>Price per: {{'$' + restaurant.priceRating}}</li>
-                    <li>Yelp Rating: <img ng-if="restaurant.yelp" ng-src="{{restaurant.yelp.rating_img_url}}"></img></li>
+                    <li>Yelp Rating: <img ng-if="restaurant.yelp" ng-src="{{restaurant.yelp.rating_img_url_small}}"></img></li>
                        <button ng-click="orderUber()">Order Uber Ride</button>
                   </ul>
                 </div>

@@ -6,8 +6,6 @@ var foodApp = angular
     'savor.profile',
     'ui.router',
     'savor.user',
-    //  '$stateProvider',
-    // '$urlRouterProvider',
     'savor.home',
     'auth0', 
     'angular-storage', 
@@ -16,8 +14,6 @@ var foodApp = angular
     'ngDialog',
     'ngMaterial',
     'material.svgAssetsCache',
-    // CHANGED
-    'ngResource'
   ])
 
 
