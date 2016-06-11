@@ -4,7 +4,10 @@ var foodApp = angular
     'savor.toolbar',
     'savor.review',
     'savor.profile',
+    'ui.router',
     'savor.user',
+       '$stateProvider',
+    '$urlRouterProvider',
     'savor.home',
     'auth0', 
     'angular-storage', 
@@ -14,7 +17,7 @@ var foodApp = angular
     'ngMaterial',
     'material.svgAssetsCache',
     // CHANGED
-    'ngResource' 
+    'ngResource'
   ])
 
 
@@ -43,6 +46,11 @@ var foodApp = angular
       url: '/review',
       templateUrl: '/views/components/review/review.tpl.html',
       controller: 'reviewController',
+    })
+    .state('test', {
+      url: '/test',
+      templateUrl: '/views/components/test/test.tpl.html',
+      controller: 'testController',
     })
     .state('/', {
       url: '/',
@@ -86,7 +94,13 @@ var foodApp = angular
     // user’s auth state with their profile and token. If
     // the JWT is expired, we redirect to the home route.
     .run(function($rootScope, $state, auth, store, jwtHelper, $location) {
-      $rootScope.$on('$locationChangeStart', function() {
+      $rootScope.$on('$locationChangeStart', function(e, toState) {
+
+        // // CHANGED (only sets)
+        // if (toState.url === '/test'){
+        //   $rootScope.toStateUrl = toState.url; 
+        // }
+
         // Get the JWT that is saved in local storage
         // and if it is there, check whether it is expired.
         // If it isn't, set the user's auth state

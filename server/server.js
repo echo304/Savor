@@ -45,6 +45,10 @@ var upload = multer({storage: storage}).single('file');
 // API endpoints
 var handler = require('./handlers/handlers');
 
+// CHANGED
+app.get('/extapi/uberlogin', handler.loginUberUser);
+app.get('/extapi/ubersignedin', handler.handleUberAuthorization)
+
 // use this route with review submit button
 app.post('/api/restaurants', handler.addRestaurant);
 
