@@ -167,7 +167,7 @@ h2 > span {
 
 #restaurantCount {
   padding-left: 20px;
-  display: inline; 
+  display: inline;
   color: black;
 }
 
@@ -198,8 +198,8 @@ h2 > span {
   display: inline-block;
   width: 460px;
   padding-top: 15px;
-  padding-bottom: 10px; 
-  background: #fff; 
+  padding-bottom: 10px;
+  background: #fff;
   -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
   -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
   box-shadow: 0px 0px 10px rgba(0,0,0,.8);
@@ -212,8 +212,8 @@ h2 > span {
   width: 460px;
   padding-top: 15px;
   padding-bottom: 10px;
-  padding-left: 10px; 
-  background: #fff; 
+  padding-left: 10px;
+  background: #fff;
   -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
   -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
   box-shadow: 0px 0px 10px rgba(0,0,0,.8);
@@ -223,7 +223,8 @@ h2 > span {
 #restphoto {
   display: block;
   float: left;
-  margin-top: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-right: 10px;
   height: 200px;
   width: 200px;
@@ -304,4 +305,9 @@ h2 > span {
   color: #3596e0;
   left: initial;
   font-size: 14px;
+}
+
+.angular-google-map-container {
+  height: 200px;
+  width: 200px;
 }
