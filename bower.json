@@ -26,7 +26,8 @@
     "ng-dialog": "^0.6.1",
     "underscore": "^1.8.3",
     "ng-file-upload": "^12.0.4",
-    "angular-google-maps": "^2.3.3"
+    "angular-google-maps": "^2.3.3",
+    "svg-assets-cache.js": "svg-assets-cache#*"
   },
   "resolutions": {
     "angular": "1.5.5"
