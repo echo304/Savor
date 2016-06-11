@@ -12,7 +12,7 @@
         <input ng-model="searchRestaurant" type="text" placeholder="Search">
       </md-input-container>
     </section>
-  
+
 
     <!-- RESTAURANT RENDER -->
     <div ng-repeat="restaurant in restaurants | filter:searchRestaurant">
@@ -23,14 +23,11 @@
               <div class="col-md-4">
                 <!-- Make sure to use 'ng-src' instead of 'src' in Angular!!!! -->
                 <img id="restphoto" ng-src={{restaurant.image}} alt="">
-                <!-- Uncomment it after integrating with Yelp API
-                <ui-gmap-google-map center='restaurant.center' zoom='11'></ui-gmap-google-map>
-                -->
-                <ui-gmap-google-map center='map.center' zoom='11'>
+                <ui-gmap-google-map center='restaurant.yelp.location.coordinate' zoom='11'>
                   <!-- Add label on it! -->
                   <ui-gmap-marker
                           idKey='1'
-                          coords='map.center'
+                          coords='restaurant.yelp.location.coordinate'
                           options='options'
                           >
                   </ui-gmap-marker>

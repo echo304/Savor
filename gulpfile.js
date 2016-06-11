@@ -33,6 +33,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
 // the real stuff
 gulp.task('default', ['browser-sync'], function () {
   gulp.watch('./client/**/*.*', ['bs-delay', 'client-test']);
+  gulp.watch('./specs/unit/client/**/*.*', ['client-test']);
   gulp.watch('./server/**/*.js', ['bs-delay', 'server-test']);
 });
 
