@@ -1,5 +1,5 @@
 <div class="home">
-  <div layout="column"> 
+  <div layout="column">
     <div>
       <img class=marquee src="http://www.st-barths.com/eden-rock/uploads/images/Gallery/restaurant/Restaurant-(3).jpg" alt="">
       <img class= "rotatingLogo" src="/views/components/toolbar/SAVOR4XWHITEXBLACK.png">
@@ -21,8 +21,20 @@
           <div id="content">
             <div class="row">
               <div class="col-md-4">
-                <!-- NEED FILE UPLOADER WORKING FIRST <img id="restphoto" src={{restaurant.image}} alt=""> -->
-                <img id="restphoto" src='http://www.fillmurray.com/100/100' alt="">
+                <!-- Make sure to use 'ng-src' instead of 'src' in Angular!!!! -->
+                <img id="restphoto" ng-src={{restaurant.image}} alt="">
+                <!-- Uncomment it after integrating with Yelp API
+                <ui-gmap-google-map center='restaurant.center' zoom='11'></ui-gmap-google-map>
+                -->
+                <ui-gmap-google-map center='map.center' zoom='11'>
+                  <!-- Add label on it! -->
+                  <ui-gmap-marker
+                          idKey='1'
+                          coords='map.center'
+                          options='options'
+                          >
+                  </ui-gmap-marker>
+                </ui-gmap-google-map>
               </div>
               <div class="col-md-8">
                 <h1>{{restaurant.restaurantName}}</h1>
