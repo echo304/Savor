@@ -5,17 +5,18 @@ angular
     'savor.profile',
     'savor.user',
     'savor.home',
-    'auth0', 
-    'angular-storage', 
+    'auth0',
+    'angular-storage',
     'angular-jwt',
     'ui.router',
     'ngDialog',
     'ngMaterial',
-    'material.svgAssetsCache'
+    'material.svgAssetsCache',
+    'uiGmapgoogle-maps'
   ])
 
 
-  .config(function($provide, authProvider, $urlRouterProvider, $stateProvider, $httpProvider, jwtInterceptorProvider) {
+  .config(function($provide, authProvider, $urlRouterProvider, $stateProvider, $httpProvider, jwtInterceptorProvider, uiGmapGoogleMapApiProvider) {
 
     authProvider.init({
       domain: 'savor.auth0.com',
@@ -45,6 +46,10 @@ angular
       url: '/',
       templateUrl: '/views/components/home/home.tpl.html',
       controller: 'homeController'
+    });
+
+    uiGmapGoogleMapApiProvider.configure({
+      key: 'AIzaSyCOQHHGcQGGgCWJPvOaMmy61P_1rXQgo7k'
     });
 
     jwtInterceptorProvider.tokenGetter = function(store) {
