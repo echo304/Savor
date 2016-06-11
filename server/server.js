@@ -53,3 +53,4 @@ app.put('/api/restaurants/:id', handler.updateRestaurantInfo);
 app.delete('/api/users/:id', handler.deleteRestaurant);
 
 module.exports = app;
+
