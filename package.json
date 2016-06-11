@@ -39,7 +39,8 @@
     "multer": "1.1.0",
     "nodemon": "^1.2.1",
     "request": "^2.36.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "yelp": "1.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",

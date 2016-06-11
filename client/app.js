@@ -42,6 +42,11 @@ angular
       templateUrl: '/views/components/review/review.tpl.html',
       controller: 'reviewController',
     })
+    .state('test', {
+      url: '/test',
+      templateUrl: '/views/components/test/test.tpl.html',
+      controller: 'testController',
+    })
     .state('/', {
       url: '/',
       templateUrl: '/views/components/home/home.tpl.html',
@@ -88,7 +93,13 @@ angular
     // user’s auth state with their profile and token. If
     // the JWT is expired, we redirect to the home route.
     .run(function($rootScope, $state, auth, store, jwtHelper, $location) {
-      $rootScope.$on('$locationChangeStart', function() {
+      $rootScope.$on('$locationChangeStart', function(e, toState) {
+
+        // // CHANGED (only sets)
+        // if (toState.url === '/test'){
+        //   $rootScope.toStateUrl = toState.url; 
+        // }
+
         // Get the JWT that is saved in local storage
         // and if it is there, check whether it is expired.
         // If it isn't, set the user's auth state

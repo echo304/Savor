@@ -8,6 +8,7 @@ underscore.factory('_', function() {
 angular
   .module('savor.home',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'underscore', 'uiGmapgoogle-maps'])
   .controller('homeController', function($scope, $http, _, uiGmapGoogleMapApi) {
+
     //refresh function that was an attempt to get just added restaurant to render on page without a refresh
     /*window.refresh = function() {
       $http.get('/api/restaurants').then(function (response) {

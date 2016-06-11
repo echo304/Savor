@@ -43,6 +43,7 @@
                     <li>Service: {{restaurant.serviceRating}}</li>
                     <li>Ambience: {{restaurant.ambienceRating}}</li>
                     <li>Price per: {{'$' + restaurant.priceRating}}</li>
+                     <li>Yelp Rating: <img ng-if="restaurant.yelp" ng-src="{{restaurant.yelp.rating_img_url_small}}"></img></li>
                   </ul>
                 </div>
             </md-card-title-text>
@@ -51,6 +52,7 @@
                 <!-- NEED FILE UPLOADER WORKING FIRST <img id="restphoto" src={{restaurant.image}} alt=""> -->
                 <img src='http://www.fillmurray.com/100/100' alt="">
               </div>
+
             </md-card-title-media>
           </md-card-title>
           <md-card-actions layout="row" layout-align="end center">
