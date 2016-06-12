@@ -7,6 +7,7 @@ var app = angular.module('savor.review',['ngMaterial', 'ngMessages', 'material.s
   };
   $scope.restaurants = [];
   $scope.isFetched = false;
+  $scope.isSelected = false;
   $scope.selectedOne = {};
   $scope.yelp;
 
@@ -51,6 +52,7 @@ var app = angular.module('savor.review',['ngMaterial', 'ngMessages', 'material.s
      $scope.selectedOne.name = item.name;
      $scope.selectedOne.address = item.location.display_address[0] + ' ' + item.location.display_address[2];
      $scope.isFetched = false;
+     $scope.isSelected = true;
    };
 
   /**

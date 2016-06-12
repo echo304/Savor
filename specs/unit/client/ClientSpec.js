@@ -118,6 +118,17 @@ describe('Client Side Unit Test', function() {
         expect($scope.selectedOne.address).to.equal('test address');
       });
     });
+
+    describe('$scope.isSelected', function() {
+      it('should be equal to false when initialized', function() {
+        expect($scope.isSelected).to.equal(false);
+      });
+
+      it('should be changed to true when $scope.selectOne called', function() {
+        $scope.selectOne(item);
+        expect($scope.isSelected).to.equal(true);
+      });
+    });
   });
 
 });

@@ -2,24 +2,34 @@
 <div ng-controller="reviewController" layout="column" layout-padding="" ng-cloak="">
   <form name="review">
   <md-content class="md-no-momentum">
+    <div ng-show="!isSelected">
+      <md-input-container class="md-icon-float md-block">
+        <md-icon><i class="material-icons" class="name">restaurant</i></md-icon>
+        <input ng-model="restaurant.name" ng-change="queryYelp()" type="text" placeholder="Restaurant">
+      </md-input-container>
 
-    <md-input-container class="md-icon-float md-block">
-      <md-icon><i class="material-icons" class="name">restaurant</i></md-icon>
-      <input ng-model="restaurant.name" ng-change="queryYelp()" type="text" placeholder="Restaurant">
-    </md-input-container>
+      <md-input-container class="md-icon-float md-block">
+        <md-icon><i class="material-icons" class="name">home</i></md-icon>
+        <input ng-model="restaurant.address" ng-change="queryYelp()" type="text" placeholder="Address">
+      </md-input-container>
+  </div>
 
-    <md-input-container class="md-icon-float md-block">
-      <md-icon><i class="material-icons" class="name">home</i></md-icon>
-      <input ng-model="restaurant.address" ng-change="queryYelp()" type="text" placeholder="Address">
+    <md-input-container class="md-icon-float md-block" ng-show="false">
+        <input ng-model="selectedOne.name" type="text" placeholder="Restaurant" required>
     </md-input-container>
 
     <md-input-container class="md-icon-float md-block" ng-show="false">
-        <input ng-model="selectedOne.name" type="text" required>
+        <input ng-model="selectedOne.address" type="text" placeholder="Address" required>
     </md-input-container>
 
-    <md-input-container class="md-icon-float md-block" ng-show="false">
-        <input ng-model="selectedOne.address" type="text" required>
-    </md-input-container>
+    <md-list class="md-dense" flex ng-show="isSelected">
+      <md-subheader class="md-no-sticky">Selected Restaurant</md-subheader>
+        <div class="md-list-item-text" layout="column">
+          <h3>{{ selectedOne.name }}</h3>
+          <h4>{{ selectedOne.address }}</h4>
+          <h4>{{ yelp.snippet_text }}</h4>
+        </div>
+    </md-list>
 
     <md-list class="md-dense" flex ng-show="isFetched">
       <md-subheader class="md-no-sticky">Search Result - Select One</md-subheader>
@@ -65,7 +75,7 @@
 
   <!-- Input for checking pic upload -->
   <md-input-container class="md-icon-float md-block" ng-show="false">
-      <input ng-model="picName" type="text" required>
+      <input ng-model="picName" type="text" placeholder="picName" required>
   </md-input-container>
 
   <div layout="row">
