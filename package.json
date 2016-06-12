@@ -39,6 +39,7 @@
     "multer": "1.1.0",
     "nodemon": "^1.2.1",
     "request": "^2.36.0",
+    "socket.io": "^1.4.6",
     "underscore": "^1.8.3",
     "yelp": "1.0.1"
   },
@@ -55,6 +56,7 @@
     "mocha": "^2.5.3",
     "phantomjs-prebuilt": "^2.1.7",
     "requirejs": "^2.2.0",
-    "sinon": "^1.17.4"
+    "sinon": "^1.17.4",
+    "socket.io-client": "^1.4.6"
   }
 }

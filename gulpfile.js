@@ -19,7 +19,7 @@ gulp.task('client-test', function(done) {
 gulp.task('server-test', function(done) {
   return gulp.src('./specs/unit/server/ServerSpec.js', {read: false})
     // gulp-mocha needs filepaths so you can't have any plugins before it
-    .pipe(mocha({reporter: 'nyan'}));
+    .pipe(mocha({reporter: 'spec'}));
 });
 
 gulp.task('browser-sync', ['nodemon'], function() {

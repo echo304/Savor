@@ -3,8 +3,9 @@ var express = require('express');
 var jwt = require('express-jwt');
 var cors = require('cors');
 var morgan = require('morgan');
-
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 // Set up mongoose
 var mongoose = require('mongoose');
@@ -26,6 +27,11 @@ app.use(cors());
 var authCheck = jwt({
   secret: new Buffer('0UpBbiHuBz0B45N27qKkqhZnJcOrgHvT6y5kVUQl-O1GSuWisuN3RKKrxjwgvqky', 'base64'),
   audience: 'VJw1CCaxKJ4FdkqPamlBxUUrjuGapt8e'
+});
+
+// Socket.io
+io.on('connection', function(socket) {
+  console.log('a user connected');
 });
 
 // API endpoints
@@ -54,4 +60,5 @@ app.put('/api/restaurants/:id', handler.updateRestaurantInfo);
 
 app.delete('/api/users/:id', handler.deleteRestaurant);
 
-module.exports = app;
+// export http variable instead app for socket.io to work properly
+module.exports = http;

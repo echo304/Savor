@@ -15,6 +15,9 @@
   <!-- Lodash for Angular-Google-Maps -->
   <script src="bower_components/lodash/dist/lodash.min.js"></script>
 
+  <!-- Socket.io -->
+  <script src="bower_components/socket.io-client/socket.io.js"></script>
+
   <!-- AngularJS -->
   <script src="bower_components/angular/angular.js"></script>
 
@@ -77,10 +80,11 @@
 </head>
 
 <body>
-<div class='lgContent' ng-app="savor" ng-controller="savorCtrl">
+  <div class='lgContent' ng-app="savor" ng-controller="savorCtrl">
     <toolbar></toolbar>
     <span class="containerbackground"> </span>
     <div ui-view=''></div>
   </div>
+  <script>var socket = io();</script>
 </body>
 </html>
