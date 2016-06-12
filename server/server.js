@@ -32,6 +32,9 @@ var authCheck = jwt({
 // Socket.io
 io.on('connection', function(socket) {
   console.log('a user connected');
+  socket.on('msg', function(msg) {
+    io.emit('msg', msg);
+  });
 });
 
 // API endpoints

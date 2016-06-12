@@ -16,34 +16,12 @@ describe('Server Side Unit Test', function() {
 
 describe('Socket.io Unit Test', function () {
   var socket;
-
-  beforeEach(function (done) {
-    // Setuo
-    socket = io.connect('http://localhost:4000', {
-      'reconnection delay' : 0,
-      'reopen delay' : 0,
-      'force new connection' : true
-    });
-    socket.on('connect', function () {
-      console.log('worked...');
-    });
-    socket.on('disconnect', function () {
-      console.log('disconnected');
-    });
-    done();
-  });
-
-  afterEach(function(done) {
-    // Cleanup
-    if(socket.connected) {
-      console.log('disconnecting...');
-      socket.disconnect();
-    } else {
-      // There will not be a connection unless you have done() in beforeEach, socket.on('connect'...)
-      console.log('no connection to break...');
-    }
-    done();
-  });
+  var url = 'http://localhost:4000';
+  var options = {
+    'reconnection': true,
+    'reconnectionDelay' : 0,
+    'force new connection' : true
+  }
 
   describe('Test for Test', function () {
     it('should pass the test', function (done) {
@@ -54,6 +32,22 @@ describe('Socket.io Unit Test', function () {
     it('should fail the test', function (done) {
       expect(true).to.equal(false);
       done();
+    });
+  });
+
+  describe('User connection', function () {
+    it('should return message back with "msg" event', function (done) {
+      socket = io(url, options);
+      socket.once('connect', function() {
+        console.log('connected!');
+        socket.once('msg', function(msg) {
+          expect(msg).to.equal('hello');
+          socket.disconnect();
+          done();
+        });
+
+        socket.emit('msg', 'hello');
+      });
     });
   });
 
