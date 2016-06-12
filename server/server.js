@@ -34,6 +34,8 @@ var handler = require('./handlers/handlers');
 // use this route with review submit button
 app.post('/api/restaurants', handler.addRestaurant);
 
+app.post('/api/restaurants/yelp', handler.queryRestaurant);
+
 app.get('/api/private', handler.getRestaurantsByUser);
 
 app.get('/api/public', function(req, res) {
@@ -53,4 +55,3 @@ app.put('/api/restaurants/:id', handler.updateRestaurantInfo);
 app.delete('/api/users/:id', handler.deleteRestaurant);
 
 module.exports = app;
-
