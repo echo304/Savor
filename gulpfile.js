@@ -35,6 +35,7 @@ gulp.task('default', ['browser-sync'], function () {
   gulp.watch('./client/**/*.*', ['bs-delay', 'client-test']);
   gulp.watch('./specs/unit/client/**/*.*', ['client-test']);
   gulp.watch('./server/**/*.js', ['bs-delay', 'server-test']);
+  gulp.watch('./specs/unit/server/**/*.js', ['server-test']);
 });
 
 // give nodemon time to restart

@@ -44,5 +44,11 @@ module.exports = {
         restaurantController.deleteOne(id, function(deleted) {
             res.status(200).json(deleted);
         });
+    },
+    queryRestaurant: function(req, res) {
+      var data = req.body;
+      restaurantController.queryRestaurant(data, function(list) {
+        res.status(200).json(list);
+      });
     }
 };
