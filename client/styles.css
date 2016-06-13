@@ -15,7 +15,8 @@ body {
 .lgContent {
   margin:auto;
   max-width: 960px;
-  background: white;
+  background: #eee;
+  padding-bottom: 40px;
 }
 
 h1 {
@@ -73,7 +74,7 @@ h2 {
 }
 
 .logo {
-  width: 95px;
+  width: 56px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2.1em;
   line-height: 1.4em;
@@ -101,7 +102,7 @@ h2 {
 
 .rotatingLogo {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     width: 222px;
     margin: -60px 0 0 -85px;
@@ -193,53 +194,7 @@ h2 > span {
   z-index: 100;
 }
 
-.ratinginfo {
-  border-radius: 10px;
-  display: inline-block;
-  width: 460px;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  background: #fff;
-  -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
-  -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
-  box-shadow: 0px 0px 10px rgba(0,0,0,.8);
-  z-index: 100;
-}
 
-.restinfo {
-  border-radius: 10px;
-  display: inline-block;
-  width: 460px;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  background: #fff;
-  -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
-  -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
-  box-shadow: 0px 0px 10px rgba(0,0,0,.8);
-  z-index: 100;
-}
-
-#restphoto {
-  display: block;
-  float: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  height: 200px;
-  width: 200px;
-}
-#restphoto img {
-  margin-top: 20px;
-  height: 200px;
-  width: 200px;
-  display: block;
-  padding: 2px;
-  background: #fff;
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
 
 #recommendation {
   margin: 0 auto;
@@ -307,11 +262,129 @@ h2 > span {
   font-size: 14px;
 }
 
-.angular-google-map-container {
-  height: 200px;
-  width: 200px;
+.lgSearch {
+  margin-bottom: -15px !important;
 }
 
+.lgRevCont {
+
+  padding-top: 38px;
+}
+
+.lgName {
+  background-color: #3f51b5; 
+  padding-left: 10px;
+  width: 100%;
+}
+
+.lgName h2{
+  color: white;
+}
+
+.lgImg {
+  height: 350px; 
+  text-align: center;
+  padding-bottom: 50px;
+}
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+#revPhoto {
+  vertical-align: middle;
+    max-height: 350px;
+    max-width: 100%;
+}
+
+.lgMap {
+  height:100%;
+  background-color: white;
+}
+
+.angular-google-map-container {
+  height: 190px;
+  width: 100%;
+}
+.lgAdd {
+  background: white;
+  padding: 10px 10px 10px 0;
+
+}
+.lgAdd p{
+  color: black;
+}
+
+
+.lgRating {
+  text-align: left;
+}
+.lgRating li {
+  list-style-type: none;
+  font-size: 1.1em;
+}
+.lgRev {
+  padding: 10px;
+  background-color:white;
+}
+.lgRev p{
+  color: black !important;
+
+}
+.gridList md-icon {
+  width: 50%;
+  height: 30%; }
+
+.gridList md-icon svg {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+
+.gridList .s64 {
+  font-size: 64px; }
+
+.gridList .s32 {
+  font-size: 48px; }
+
+.gridList md-icon.fa {
+  display: block;
+  padding-left: 0; }
+
+.gridList md-icon.s32 span {
+  padding-left: 8px; }
+
+.gridList md-grid-list {
+  margin: 8px; }
+
+.gridList .white {
+  background: #FFF; }
+
+.gridList md-grid-tile {
+  transition: all 300ms ease-out 50ms; }
+
+.gridList md-grid-tile md-icon {
+  padding-bottom: 32px; }
+
+.gridList md-grid-tile md-grid-tile-footer {
+  background: rgba(0, 0, 0, 0.68);
+  height: 36px; }
+
+.gridList md-grid-tile-footer figcaption {
+  width: 100%; }
+
+.gridList md-grid-tile-footer figcaption h3 {
+  margin: 0;
+  font-weight: 700;
+  width: 100%;
+  text-align: center; }
+
+.result-list {
+  min-height: 30px !important;
+}
 .result-list:hover {
   background-color: gray;
+}
+.lgClose {
+  float:right;
+  padding: 8px;
 }

@@ -1,6 +1,6 @@
 angular
-  .module('savor.user',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
-  .controller('userController', function($scope, $http) {
+  .module('savor.user',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'uiGmapgoogle-maps'])
+  .controller('userController', function($scope, $http, uiGmapGoogleMapApi) {
 
     $scope.profile = JSON.parse(localStorage.getItem('profile'));
 
@@ -17,7 +17,9 @@ angular
         });
       });
     }
-    getAll();
+    uiGmapGoogleMapApi.then(function(maps) {
+      getAll();
+    });
   })
   .config(function($mdThemingProvider) {
     $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
