@@ -4,7 +4,7 @@ angular
 
 // CHANGED (not really)
 // they forgot to inject rootScope?
-function toolbarController(auth, store, $location, ngDialog, $scope, $mdSidenav) {
+function toolbarController(auth, store, $location, ngDialog, $scope, $mdSidenav, $rootScope) {
   var vm = this;
   vm.login = login;
   vm.logout = logout;
@@ -55,6 +55,7 @@ function toolbarController(auth, store, $location, ngDialog, $scope, $mdSidenav)
 
   $scope.chatLog = [];
   $scope.chatMsg = '';
+  $scope.profile = JSON.parse(localStorage.getItem('profile'));
 
   socket.on('chat msg', function (msg) {
     $scope.$applyAsync(function () {
@@ -66,9 +67,10 @@ function toolbarController(auth, store, $location, ngDialog, $scope, $mdSidenav)
     if(e.charCode === 13) {
 
       // username should be set!!!
-      var username = /* something || */'test';
+      var username = $scope.profile.nickname || 'Unknown';
       socket.emit('chat msg', {username: username, msg: $scope.chatMsg});
       $scope.chatMsg = '';
+      console.log($scope.chatLog);
     }
   };
 
