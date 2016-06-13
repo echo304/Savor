@@ -3,7 +3,7 @@ angular
   .controller('homeController', function($scope, $http, uiGmapGoogleMapApi) {
 
     $scope.profile = JSON.parse(localStorage.getItem('profile'));
-
+    $scope.score = [1,2,3,4,5];
     $scope.getAll = function getAll() {
       $http.get('/api/restaurants').then(function(res) {
         $scope.restaurants = res.data;

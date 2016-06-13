@@ -26,10 +26,14 @@
                 <p>{{restaurant.restaurantReview}}</p>
                 <hr>
                 <div class="lgRating">
-                  <p>Food: {{restaurant.foodRating}}<br />
-                   Service: {{restaurant.serviceRating}}<br />
-                   Ambience: {{restaurant.ambienceRating}}<br />
-                   Price per: {{'$' + restaurant.priceRating}}<br />
+                  <p>Food:
+                  <md-icon style="margin:0;padding-bottom:0;font-size:16px;"><i style="font-size:16px;" ng-repeat="item in score | limitTo:restaurant.foodRating" class="material-icons" class="lgI">local_pizza</i></md-icon><br />
+                  Service: 
+                  <md-icon style="margin:0;padding-bottom:0;font-size:16px;"><i style="font-size:16px;" ng-repeat="item in score | limitTo:restaurant.serviceRating" class="material-icons" class="lgI">room_service</i></md-icon><br />
+                  Ambience: 
+                  <md-icon style="margin:0;padding-bottom:0;font-size:16px;"><i style="font-size:16px;" ng-repeat="item in score | limitTo:restaurant.ambienceRating" class="material-icons" class="lgI">spa</i></md-icon><br />
+                  Cost: 
+                  <md-icon style="margin:0;padding-bottom:0;font-size:16px;"><i style="font-size:16px;" ng-repeat="item in score | limitTo:restaurant.priceRating" class="material-icons" class="lgI">attach_money</i></md-icon><br />
                    Yelp Rating: <img ng-if="restaurant.yelp" ng-src="{{restaurant.yelp.rating_img_url_small}}"></img></p>
                  </div>
                </div>
