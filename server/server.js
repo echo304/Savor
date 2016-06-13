@@ -31,9 +31,12 @@ var authCheck = jwt({
 
 // Socket.io
 io.on('connection', function(socket) {
-  console.log('a user connected');
-  socket.on('msg', function(msg) {
-    io.emit('msg', msg);
+
+  // once socket-client emit 'chat msg' event from client, chatHandler function will be invoked
+  socket.on('chat msg', function chatHandler(msg) {
+
+    // server emit 'chat msg' event back to every socket-client
+    io.emit('chat msg', msg);
   });
 });
 

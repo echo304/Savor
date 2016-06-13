@@ -15,6 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'client/bower_components/socket.io-client/socket.io.js',
       'client/bower_components/angular/angular.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       'client/bower_components/angular-material/angular-material.js',
@@ -29,6 +30,7 @@ module.exports = function(config) {
       'client/app.js',
       'client/views/components/home/home.ctrl.js',
       'client/views/components/review/review.ctrl.js',
+      'client/views/components/toolbar/toolbar.ctrl.js',
       'specs/unit/client/*.*'
     ],
 

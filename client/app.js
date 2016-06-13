@@ -147,3 +147,6 @@ angular
     }
 
   }]);
+
+// initialize socket.io-client
+var socket = io();

@@ -23,30 +23,34 @@ describe('Socket.io Unit Test', function () {
     'force new connection' : true
   }
 
+  beforeEach(function () {
+    socket = io(url, options);
+  });
+
+  afterEach(function () {
+    socket.disconnect();
+  });
+
   describe('Test for Test', function () {
     it('should pass the test', function (done) {
       expect(true).to.equal(true);
       done();
     });
-
-    it('should fail the test', function (done) {
-      expect(true).to.equal(false);
-      done();
-    });
   });
 
-  describe('User connection', function () {
-    it('should return message back with "msg" event', function (done) {
-      socket = io(url, options);
+  describe('message event', function () {
+    it('should return message back with "chat msg" event when server listen "chat msg" event', function (done) {
       socket.once('connect', function() {
-        console.log('connected!');
-        socket.once('msg', function(msg) {
-          expect(msg).to.equal('hello');
-          socket.disconnect();
+        socket.once('chat msg', function(msg) {
+          expect(msg.username).to.equal('sb');
+          expect(msg.msg).to.equal('hello');
           done();
         });
 
-        socket.emit('msg', 'hello');
+        socket.emit('chat msg', {
+          username: 'sb',
+          msg: 'hello'
+        });
       });
     });
   });

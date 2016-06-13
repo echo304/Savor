@@ -131,4 +131,54 @@ describe('Client Side Unit Test', function() {
     });
   });
 
+  // Skip toolbar test for the moment...
+  describe.skip('toolbarController', function() {
+    var controller;
+    var $scope = {};
+    var $location = {};
+    var $mdSidenav;
+    var state = {};
+    var ngDialog = {};
+
+    // How to mock module =>
+    angular.module('ngDialog', []);
+
+    beforeEach(function () {
+      var ele = document.createElement('md-sidenav');
+      ele.setAttribute('class', 'md-sidenav-right _md-closed');
+      ele.setAttribute('md-component-id', 'right');
+      // document.body.appendChild(ele);
+      document.body.insertBefore(ele, document.body.childNodes[0])
+      var isOpened = false;
+      module({
+        'mockmdSidenav': function () {
+          return {
+            isOpen: function() {
+              return isOpened;
+            },
+            close: function() {
+              isOpened = false;
+            },
+            open: function () {
+              isOpened = true;
+            }
+          }
+        }
+      });
+      module('savor.toolbar')
+
+      inject(function(_$controller_, _$mdSidenav_){
+        var $controller = _$controller_;
+        $mdSidenav = _$mdSidenav_;
+        controller = $controller(toolbarController, { $scope: $scope, ngDialog: ngDialog, auth: {}, store: {}, $mdSidenav: $mdSidenav});
+      })
+    });
+
+    describe('socket.io', function() {
+      it('should emit "chat msg" event when $scope.keypress is called with enter key', function(done) {
+        $scope.keypress({charCode: 13});
+      });
+    });
+  });
+
 });

@@ -7,14 +7,14 @@
 
   <md-toolbar>
   <div class="md-toolbar-tools themer">
-    <img 
-      class= "logo" 
+    <img
+      class= "logo"
       ui-sref="/"
       src="/views/components/toolbar/SAVOR4XWHITEXBLACK.png"
       ng-click="toolbar.goHome()"
     >
     <span flex></span>
-    
+
     <!-- LOGIN BUTTON -->
     <md-button
       aria-label="Login"
@@ -27,15 +27,27 @@
     <!-- PENCIL WRITE REVIEW BUTTON -->
     <md-button
       aria-label="Write Review"
-      style="float:right" 
+      style="float:right"
       ng-click="openReview()"
       ng-if="toolbar.auth.isAuthenticated"
       <i class="material-icons" class="name">mode_edit</i></md-icon>
     </md-button>
 
     <md-button
+      aria-label="Write Review"
+      style="float:right"
+      ng-click="openChat()">
+      Chat
+    </md-button>
+    <!-- <md-button ng-click="toggleRight()"
+      ng-hide="isOpenRight()"
+      class="md-primary">
+      Toggle right
+    </md-button> -->
+
+    <md-button
       aria-label="User"
-      style="float:right" 
+      style="float:right"
       ui-sref="user"
       ng-if="toolbar.auth.isAuthenticated"
       <i class="material-icons">person</i>
@@ -49,7 +61,31 @@
       ng-click="toolbar.logout()">
       Logout
     </md-button>
-   
+
   </div>
   </md-toolbar>
+
+  <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+    <md-toolbar class="md-theme-light">
+    </md-toolbar>
+    <md-content layout-padding>
+      <md-list class="md-dense" flex>
+        <md-list-item class="md-3-line result-list" ng-repeat="item in chatLog">
+          <div class="md-list-item-text" layout="column">
+            <h4>{{ item.username + ' : ' + item.msg}}</h4>
+          </div>
+        </md-list-item>
+      </md-list>
+      <form>
+        <md-input-container>
+          <label for="testInput">Chat here...</label>
+          <input type="text" id="testInput"
+                 ng-model="chatMsg" md-autofocus ng-keypress="keypress($event)" autocomplete="off">
+        </md-input-container>
+      </form>
+      <md-button ng-click="closeChat()" class="md-primary">
+        Close Sidenav Right
+      </md-button>
+    </md-content>
+  </md-sidenav>
 </body>

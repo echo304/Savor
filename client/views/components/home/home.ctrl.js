@@ -10,15 +10,6 @@ angular
       })
     };*/
 
-    // default data of google map
-    // $scope.map = {
-    //   center: {
-    //     latitude: 45,
-    //     longitude: -73
-    //   },
-    //   zoom: 8
-    // };
-
     $scope.profile = JSON.parse(localStorage.getItem('profile'));
 
     $scope.getAll = function getAll() {
