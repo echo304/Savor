@@ -269,6 +269,7 @@ h2 > span {
 .lgRevCont {
 
   padding-top: 38px;
+<<<<<<< f3e743fd85a76f6af0b0d485519ac13dd076522b
 }
 
 .lgName {
@@ -276,6 +277,15 @@ h2 > span {
   padding-left: 10px;
   width: 100%;
 }
+=======
+}
+
+.lgName {
+  background-color: #3f51b5; 
+  padding-left: 10px;
+  width: 100%;
+}
+>>>>>>> Add style to review tiles
 .lgName h2{
   color: white;
 }
@@ -308,10 +318,17 @@ h2 > span {
 .lgAdd {
   background: white;
   padding: 10px 10px 10px 0;
+<<<<<<< f3e743fd85a76f6af0b0d485519ac13dd076522b
 }
 .lgAdd p{
   color: black;
 }
+=======
+}
+.lgAdd p{
+  color: black;
+}
+>>>>>>> Add style to review tiles
 
 .lgRating {
   text-align: left;
