@@ -12,18 +12,9 @@ angular
           //if (i === 0 || i === 4 || i === 6 || i === 12) it.span.row = it.span.col = 2;
         });
       });
-<<<<<<< f4fe99b0751b8ba788fed3980285c88198a7dbf6
     };
 
     uiGmapGoogleMapApi.then(function(maps) {
       $scope.getAll();
     });
   });
-=======
-    }
-    // Make sure to wait till Google Maps SDK is fully ready
-    uiGmapGoogleMapApi.then(function(maps) {
-      getAll();
-    });
-  });
->>>>>>> Added review tiles to user page

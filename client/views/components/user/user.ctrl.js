@@ -1,19 +1,6 @@
 angular
-<<<<<<< f4fe99b0751b8ba788fed3980285c88198a7dbf6
   .module('savor.user',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'uiGmapgoogle-maps'])
   .controller('userController', function($scope, $http, uiGmapGoogleMapApi) {
-=======
-  .module('savor.user',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'underscore', 'uiGmapgoogle-maps'])
-  .controller('userController', function($scope, $http, _, uiGmapGoogleMapApi) {
-
-    $scope.map = {
-      center: {
-        latitude: 45,
-        longitude: -73
-      },
-      zoom: 8
-    };
->>>>>>> Added review tiles to user page
 
     $scope.profile = JSON.parse(localStorage.getItem('profile'));
 
@@ -30,10 +17,6 @@ angular
         });
       });
     }
-<<<<<<< f4fe99b0751b8ba788fed3980285c88198a7dbf6
-=======
-    // Make sure to wait till Google Maps SDK is fully ready
->>>>>>> Added review tiles to user page
     uiGmapGoogleMapApi.then(function(maps) {
       getAll();
     });
