@@ -1,7 +1,7 @@
 angular
   .module('savor.home',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'uiGmapgoogle-maps'])
   .controller('homeController', function($scope, $http, uiGmapGoogleMapApi) {
-
+    $scope.showMap = false;
     $scope.profile = JSON.parse(localStorage.getItem('profile'));
     $scope.score = [1,2,3,4,5];
     $scope.getAll = function getAll() {
@@ -14,7 +14,18 @@ angular
       });
     };
 
+    $scope.shareOnFB = function (restaurant) {
+      FB.ui({
+        method: 'share',
+        href: restaurant.yelp.url,
+      }, function(response){});
+    };
+
     uiGmapGoogleMapApi.then(function(maps) {
+
       $scope.getAll();
+      $scope.$applyAsync(function () {
+        $scope.showMap = true;
+      });
     });
   });

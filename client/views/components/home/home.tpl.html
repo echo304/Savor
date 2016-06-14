@@ -20,7 +20,7 @@
           <div class="lgRevCont" layout="column" layout-fill>
             <div flex="45" class="lgImg">
               <span class="helper"></span><img id="revPhoto" ng-src="{{restaurant.image}}" alt="">
-            </div>  
+            </div>
             <div flex="55" class= lgLower layout="row">
               <div flex="50" class="lgRev" >
                 <p>{{restaurant.restaurantReview}}</p>
@@ -35,6 +35,12 @@
                   Cost: 
                   <md-icon style="margin:0;padding-bottom:0;font-size:16px;"><i style="font-size:16px;" ng-repeat="item in score | limitTo:restaurant.priceRating" class="material-icons" class="lgI">attach_money</i></md-icon><br />
                    Yelp Rating: <img ng-if="restaurant.yelp" ng-src="{{restaurant.yelp.rating_img_url_small}}"></img></p>
+                   <md-button
+                   aria-label="shareOnFB"
+                   style="float:left"
+                   ng-click="shareOnFB(restaurant)">
+                   Share it to Facebook
+                 </md-button>
                  </div>
                </div>
                <div flex="50" layout="column">
@@ -42,7 +48,7 @@
                   <p>{{restaurant.restaurantAddress}}</p>
                 </div>
                 <div flex="78" class="lgMap">
-                  <ui-gmap-google-map center='restaurant.yelp.location.coordinate' zoom='11'>
+                  <ui-gmap-google-map center='restaurant.yelp.location.coordinate' ng-if="showMap" zoom='11'>
                     <ui-gmap-marker idKey='1' coords='restaurant.yelp.location.coordinate' options='options'>
                     </ui-gmap-marker>
                   </ui-gmap-google-map>
